@@ -9,3 +9,6 @@ plugins:
   - plugin: buf.build/protocolbuffers/go
     out: ../gen/go
     opt: paths=source_relative
+  - name: apidocs
+    out: ../docs
+    opt: paths=source_relative
