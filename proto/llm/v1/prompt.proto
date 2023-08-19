@@ -1,0 +1,17 @@
+syntax = "proto3";
+package llm.v1;
+
+// Prompt represents the input provided to a generation, including the template, context, and other details.
+message Prompt {
+  string id = 1; // Unique identifier for the prompt.
+  string template = 2; // The templated language or structure of the prompt.
+  bytes context = 3; // Context information in binary format, such as retrieval-augmented generation context.
+}
+
+// Rater represents details about the entity providing a rating, including qualifications and type (human or model).
+message Rater {
+  string id = 1; // Unique identifier for the rater.
+  string type = 2; // Type of rater, e.g., "human" or "model".
+  string qualification = 3; // Qualification details, use-case dependent.
+}
+

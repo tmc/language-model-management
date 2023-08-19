@@ -1,0 +1,17 @@
+syntax = "proto3";
+package llm.v1;
+
+// Model represents a high-level abstraction for a language model.
+message Model {
+  string id = 1; // Unique identifier for the model.
+  string name = 2; // Name or description of the model.
+  repeated ModelVersion versions = 3; // List of versions for this model.
+}
+
+// ModelVersion represents a specific version of a model, including details like the version number and any associated metadata.
+message ModelVersion {
+  string version = 1; // Version identifier, e.g., "v1.0".
+  string description = 2; // Optional description of this version.
+  map<string, string> metadata = 3; // Key-value pairs for any additional metadata.
+}
+
