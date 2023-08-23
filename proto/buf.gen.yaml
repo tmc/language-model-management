@@ -12,3 +12,6 @@ plugins:
   - name: apidocs
     out: ../docs
     opt: paths=source_relative
+  - name: d2
+    out: .
+    opt: paths=source_relative

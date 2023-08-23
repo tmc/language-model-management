@@ -1,0 +1,22 @@
+
+# Package - llm.v1
+
+# Class - Output
+Output: {
+  shape: class
+  id: string
+  content: string
+  rating: OutputRating
+}
+Output -> OutputRating
+
+# Class - OutputRating
+OutputRating: {
+  shape: class
+  score: float
+  rater: Rater
+}
+OutputRating -> Rater
+
+
+

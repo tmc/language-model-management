@@ -1,0 +1,22 @@
+
+# Package - llm.v1
+
+# Class - Model
+Model: {
+  shape: class
+  id: string
+  name: string
+  versions: ModelVersion
+}
+Model -> ModelVersion
+
+# Class - ModelVersion
+ModelVersion: {
+  shape: class
+  version: string
+  description: string
+  metadata: map<string, string>
+}
+
+
+
