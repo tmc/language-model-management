@@ -13,5 +13,5 @@ plugins:
     out: ../docs
     opt: paths=source_relative
   - name: d2
-    out: .
+    out: ../docs
     opt: paths=source_relative
