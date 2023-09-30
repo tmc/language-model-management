@@ -1,17 +1,50 @@
 syntax = "proto3";
 package llm.v1;
 
-// Prompt represents the input provided to a generation, including the template, context, and other details.
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+// Prompt represents the input provided to a generation.
 message Prompt {
-  string id = 1; // Unique identifier for the prompt.
-  string template = 2; // The templated language or structure of the prompt.
-  bytes context = 3; // Context information in binary format, such as retrieval-augmented generation context.
+  // Unique identifier for the prompt.
+  string id = 1;
+
+  // Templated language or structure of the prompt.
+  string template = 2;
+
+  // Contextual information supplied with the prompt.
+  map<string, string> context = 3;
+
+  // Timestamp indicating when the prompt was created.
+  google.protobuf.Timestamp created_at = 4;
+
+  // Metadata.
+  repeated google.protobuf.Any metadata = 5;
 }
 
-// Rater represents details about the entity providing a rating, including qualifications and type (human or model).
+// Rater represents the entity providing a rating, either human or model-based.
 message Rater {
-  string id = 1; // Unique identifier for the rater.
-  string type = 2; // Type of rater, e.g., "human" or "model".
-  string qualification = 3; // Qualification details, use-case dependent.
-}
+  enum RaterType {
+    // Unspecified rater type.
+    RATER_TYPE_UNSPECIFIED = 0;
+    // Human rater.
+    RATER_TYPE_HUMAN = 1;
+    // Model-based rater.
+    RATER_TYPE_MODEL = 2;
+  }
 
+  // Unique identifier for the rater.
+  string id = 1;
+
+  // Type of the rater.
+  RaterType type = 2;
+
+  // Qualification details of the rater, which are use-case dependent.
+  string qualification = 3;
+
+  // Timestamp indicating when the rater was qualified or registered.
+  google.protobuf.Timestamp qualified_at = 4;
+
+  // Metadata.
+  repeated google.protobuf.Any metadata = 5;
+}
