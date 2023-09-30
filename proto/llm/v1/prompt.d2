@@ -6,16 +6,25 @@ Prompt: {
   shape: class
   id: string
   template: string
-  context: bytes
+  context: map<string, string>
+  created_at: Timestamp
+  metadata: Any
 }
+Prompt -> Timestamp
+Prompt -> Any
 
 # Class - Rater
 Rater: {
   shape: class
   id: string
-  type: string
+  type: Rater_RaterType
   qualification: string
+  qualified_at: Timestamp
+  metadata: Any
 }
+Rater -> Rater_RaterType
+Rater -> Timestamp
+Rater -> Any
 
 
 
