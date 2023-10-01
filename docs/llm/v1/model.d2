@@ -6,8 +6,9 @@ Model: {
   shape: class
   id: string
   name: string
-  versions: ModelVersion
+  versions: repeated ModelVersion
 }
+
 Model -> ModelVersion
 
 # Class - ModelVersion
@@ -15,12 +16,13 @@ ModelVersion: {
   shape: class
   version: string
   description: string
-  metadata: map<string, string>
+  metadata: repeated map<string, string>
   created_at: Timestamp
   updated_at: Timestamp
 }
-ModelVersion -> Timestamp
-ModelVersion -> Timestamp
+
+
+
 
 
 

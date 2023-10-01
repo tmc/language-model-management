@@ -6,12 +6,11 @@ Prompt: {
   shape: class
   id: string
   template: string
-  context: map<string, string>
+  context: repeated map<string, string>
   created_at: Timestamp
-  metadata: Any
+  metadata: repeated Any
 }
-Prompt -> Timestamp
-Prompt -> Any
+
 
 # Class - Rater
 Rater: {
@@ -20,11 +19,25 @@ Rater: {
   type: Rater_RaterType
   qualification: string
   qualified_at: Timestamp
-  metadata: Any
+  metadata: repeated Any
 }
+
+  
+# Enum - Rater_RaterType
+Rater_RaterType: {
+  grid-columns: 2
+  grid-gap: 0
+  Rater_RATER_TYPE_UNSPECIFIED
+  Rater_RATER_TYPE_HUMAN
+  Rater_RATER_TYPE_MODEL
+  0
+  1
+  2
+}
+
 Rater -> Rater_RaterType
-Rater -> Timestamp
-Rater -> Any
+
+
 
 
 

@@ -7,11 +7,13 @@ Generation: {
   id: string
   model_version_id: string
   prompt_id: string
-  outputs: Output
+  outputs: repeated Output
   created_at: Timestamp
 }
+
 Generation -> Output
-Generation -> Timestamp
+
+
 
 
 

@@ -9,8 +9,8 @@ Output: {
   rating: OutputRating
   created_at: Timestamp
 }
+
 Output -> OutputRating
-Output -> Timestamp
 
 # Class - OutputRating
 OutputRating: {
@@ -20,8 +20,10 @@ OutputRating: {
   feedback: string
   rated_at: Timestamp
 }
+
 OutputRating -> Rater
-OutputRating -> Timestamp
+
+
 
 
 
